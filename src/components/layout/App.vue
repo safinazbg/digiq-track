@@ -3,32 +3,32 @@
     <lView class="app relative text-slate-900">
       <template #body>
         <LModal
-            v-for="(actionError, index) in actionErrors"
-            :key="index"
-            class="fixed"
-            :clickable="false"
-            style="z-index: 4002; margin-top: 1rem"
+          v-for="(actionError, index) in actionErrors"
+          :key="index"
+          class="fixed"
+          :clickable="false"
+          style="z-index: 4002; margin-top: 1rem"
         >
           <template #body>
             <AssetStatus
-                :contextName="actionError.name"
-                :error="actionError"
-                @click="() => onAcknowledgeActionError(actionError)"
+              :contextName="actionError.name"
+              :error="actionError"
+              @click="() => onAcknowledgeActionError(actionError)"
             ></AssetStatus>
           </template>
         </LModal>
         <LModal
-            v-show="modalComponentName"
-            class="fixed h-full w-full bg-black/30"
-            style="z-index: 4000"
-            @close="onModalClose"
+          v-show="modalComponentName"
+          class="fixed h-full w-full bg-black/30"
+          style="z-index: 4000"
+          @close="onModalClose"
         >
           <template #body>
             <div v-if="modalComponentName">
               <component
-                  :is="modalComponentName"
-                  @close="onModalClose"
-                  @done="onModalClose"
+                :is="modalComponentName"
+                @close="onModalClose"
+                @done="onModalClose"
               ></component>
             </div>
           </template>
@@ -91,14 +91,14 @@ export default {
     const { isWorkshopSession } = useQueryParam("isWorkshopSession", true);
 
     const actionErrors = computed(() =>
-        Object.entries(state.status)
-            // eslint-disable-next-line no-unused-vars
-            .filter(([key, value]) => value?.isError === true)
-            .map(([name, value]) => ({
-              actionName: name,
-              name: withoutPostfix(withoutPostfix(name, "Error"), " Error"),
-              message: value.body,
-            }))
+      Object.entries(state.status)
+        // eslint-disable-next-line no-unused-vars
+        .filter(([key, value]) => value?.isError === true)
+        .map(([name, value]) => ({
+          actionName: name,
+          name: withoutPostfix(withoutPostfix(name, "Error"), " Error"),
+          message: value.body,
+        }))
     );
     const permissionItems = {
       readAsset: "Read Asset",
@@ -110,16 +110,16 @@ export default {
     store.commit(RESUME_SESSION);
 
     watch(
-        router.currentRoute,
-        (route) => {
-          const { query } = route;
-          const { modal } = query;
-          modalComponentName.value = modalComponentNames[modal];
-          if (!modalComponentName.value && self.user.value?.__isAppAdmin)
-            modalComponentName.value = appAdminModalComponentNames[modal];
-          modalComponentName.value = modalComponentName.value ?? "";
-        },
-        { immediate: true }
+      router.currentRoute,
+      (route) => {
+        const { query } = route;
+        const { modal } = query;
+        modalComponentName.value = modalComponentNames[modal];
+        if (!modalComponentName.value && self.user.value?.__isAppAdmin)
+          modalComponentName.value = appAdminModalComponentNames[modal];
+        modalComponentName.value = modalComponentName.value ?? "";
+      },
+      { immediate: true }
     );
 
     const onModalClose = () => {
@@ -154,9 +154,9 @@ export default {
 button.main,
 button.primary {
   background-image: linear-gradient(
-      to bottom right,
-      #db2777,
-      #f97316
+    to bottom right,
+    #db2777,
+    #f97316
   ) !important;
 }
 
