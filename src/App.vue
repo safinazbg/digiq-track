@@ -22,7 +22,6 @@
         </div>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
@@ -30,13 +29,12 @@
 import {computed, shallowRef} from "vue";
 import {useQueryParam} from "@/composables/useQueryParam";
 import LModal from "@/components/layout/LModal";
-import {_PUT_STATUS, LIST_ASSETS, RESUME_SESSION} from "@/store/operations";
+import {_PUT_STATUS, RESUME_SESSION} from "@/store/operations";
 import {useStore} from "vuex";
 import {useRouter} from "vue-router";
 import AssetStatus from "@/components/AssetStatus.vue";
 import {state} from "@/store";
 import {withoutPostfix} from "@/lib/typeHelpers/stringFunctions/prefixPostfix";
-import Footer from "../digiq_t/components/Footer.vue";
 import Digiq_tLandingView from "../digiq_t/digiq_tLandingView.vue";
 
 export default {
@@ -45,7 +43,6 @@ export default {
     Digiq_tLandingView,
     AssetStatus,
     LModal,
-    Footer,
   },
   setup() {
     const router = useRouter();
@@ -69,7 +66,7 @@ export default {
       developAsset: "Create, Edit, Delete Asset",
       manageAsset: "Manage Asset",
     };
-    store.dispatch(LIST_ASSETS, {dataType: "Organisation"});
+    // store.dispatch(LIST_ASSETS, {dataType: "Organisation"});
     store.commit(RESUME_SESSION);
 
     const onModalClose = () => {

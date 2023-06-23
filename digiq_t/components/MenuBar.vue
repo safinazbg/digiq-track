@@ -8,15 +8,14 @@
       >
         <div class="flex flex-wrap justify-between mt-3 h6:mt-0 items-center z-10">
           <a href="/" class="flex">
-            <img src="../../public/logo.svg" class="h-10 h6:mt-0 h6:h-16"/>
+            <img src="../public/logo.png" class="h-10 h6:mt-0 h6:h-16"/>
           </a>
           <div
               class="hidden k1:visible k1:flex k1:gap-4 absolute left-1/2 -translate-x-1/2"
           >
-            <router-link to="/organisations">Organisations</router-link>
-            <router-link to="/accords">Accords</router-link>
-            <router-link to="/news">News</router-link>
-            <router-link to="/about/us">About</router-link>
+            <router-link to="/">Home</router-link>
+            <router-link to="/info">Info</router-link>
+            <router-link to="/resources">Resources</router-link>
           </div>
           <div class="k1:ml-8 gap-2 items-center flex k1:gap-4">
             <!-- <button
@@ -40,7 +39,6 @@
                 <button
                     class="hidden h6:block button main"
                     style="background-image: linear-gradient(to right, #db2777, #f97316); "
-                    @click="onLogout"
                 >
                   Log Out
                 </button>

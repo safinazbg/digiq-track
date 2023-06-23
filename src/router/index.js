@@ -1,17 +1,13 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import digiq_t from '../../digiq_t/digiq_tLandingView.vue'
+import {createRouter, createWebHashHistory} from 'vue-router'
+import moduleRoutes from '@/../digiq_t/routes.js'
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: digiq_t
-  },
+    ...moduleRoutes
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes
+    history: createWebHashHistory(),
+    routes
 })
 
 export default router

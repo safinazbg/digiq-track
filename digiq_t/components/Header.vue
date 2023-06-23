@@ -1,9 +1,10 @@
 <template>
   <div
     class="header bg-cover k1:pb-96 pt-24 k1:p-12 h-[60vh] k1:h-screen"
-    style="
-      background-image: url('../../particles_2000.jpg');
-      background-position: center top;
+    :style="{
+        backgroundImage: 'url(@public/landing.jpg)',
+        backgroundPosition: 'center top'
+      }
     "
   >
 <!--    <LParticles class="pointer-events-none"></LParticles>-->
@@ -39,7 +40,7 @@
               v-else
               class="button main"
               style="background-image: linear-gradient(to right, #db2777, #f97316); "
-              @click="$router.push('/registerOrganisation')"
+              @click="$router.push('/info')"
             >
               Create Organisation
             </button>
@@ -55,7 +56,7 @@
 import { useUserPermissions } from "@/composables/useUserPermissions";
 
 export default {
-  name: "Header",
+  name: "cHeader",
   components: {
     // LParticles,
   },
