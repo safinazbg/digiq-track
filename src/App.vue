@@ -19,7 +19,7 @@
         </LModal>
         <div class="relative w-full flex flex-col items-stretch">
           <div class="h-full mt-32">
-            <router-view></router-view>
+            <Digiq_t-landing-view></Digiq_t-landing-view>
           </div>
         </div>
       </template>
@@ -40,10 +40,12 @@ import AssetStatus from "@/components/AssetStatus.vue";
 import { state } from "@/store";
 import { withoutPostfix } from "@/lib/typeHelpers/stringFunctions/prefixPostfix";
 import Footer from "../digiq_t/components/Footer.vue";
+import Digiq_tLandingView from "../digiq_t/digiq_tLandingView.vue";
 
 export default {
   name: "App",
   components: {
+    Digiq_tLandingView,
     AssetStatus,
     LModal,
     LView,
