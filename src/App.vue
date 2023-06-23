@@ -17,22 +17,6 @@
             ></AssetStatus>
           </template>
         </LModal>
-        <LModal
-            v-show="modalComponentName"
-            class="fixed h-full w-full bg-black/30"
-            style="z-index: 4000"
-            @close="onModalClose"
-        >
-          <template #body>
-            <div v-if="modalComponentName">
-              <component
-                  :is="modalComponentName"
-                  @close="onModalClose"
-                  @done="onModalClose"
-              ></component>
-            </div>
-          </template>
-        </LModal>
         <div class="relative w-full flex flex-col items-stretch">
           <div class="h-full mt-32">
             <router-view></router-view>
@@ -46,47 +30,28 @@
 
 <script>
 import LView from "@/components/layout/LView";
-import { computed, shallowRef, watch } from "vue";
+import { computed, shallowRef } from "vue";
 import { useQueryParam } from "@/composables/useQueryParam";
 import LModal from "@/components/layout/LModal";
 import { _PUT_STATUS, LIST_ASSETS, RESUME_SESSION } from "@/store/operations";
 import { useStore } from "vuex";
-import Login from "@/components/authentication/Login";
 import { useRouter } from "vue-router";
-import RegisterUserAccount from "@/components/authentication/RegisterUserAccount";
-import ManageAssetMembers from "@/components/admin/ManageAssetMembers.vue";
-import ManageAppUsers from "@/components/admin/ManageAppUsers.vue";
-import { useUserPermissions } from "@/composables/useUserPermissions";
-import AssetStatus from "@/components/asset/AssetStatus.vue";
+import AssetStatus from "@/components/AssetStatus.vue";
 import { state } from "@/store";
-import { withoutPostfix } from "@/lib/prefixPostfix";
-import Footer from "@/components/layout/Footer.vue";
-
-const modalComponentNames = {
-  login: Login,
-  "sign up": RegisterUserAccount,
-  ManageMembers: ManageAssetMembers,
-};
-const appAdminModalComponentNames = {
-  ManageAppUsers: ManageAppUsers,
-};
+import { withoutPostfix } from "@/lib/typeHelpers/stringFunctions/prefixPostfix";
+import Footer from "@/components/app/Footer.vue";
 
 export default {
   name: "App",
   components: {
     AssetStatus,
     LModal,
-    Login,
     LView,
-    RegisterUserAccount,
-    ManageAssetMembers,
-    ManageAppUsers,
     Footer,
   },
   setup() {
     const router = useRouter();
     const store = useStore();
-    const self = useUserPermissions();
     const modalComponentName = shallowRef("");
     const { isWorkshopSession } = useQueryParam("isWorkshopSession", true);
 
@@ -108,19 +73,6 @@ export default {
     };
     store.dispatch(LIST_ASSETS, { dataType: "Organisation" });
     store.commit(RESUME_SESSION);
-
-    watch(
-        router.currentRoute,
-        (route) => {
-          const { query } = route;
-          const { modal } = query;
-          modalComponentName.value = modalComponentNames[modal];
-          if (!modalComponentName.value && self.user.value?.__isAppAdmin)
-            modalComponentName.value = appAdminModalComponentNames[modal];
-          modalComponentName.value = modalComponentName.value ?? "";
-        },
-        { immediate: true }
-    );
 
     const onModalClose = () => {
       router.push({ query: {} });
