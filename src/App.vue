@@ -39,7 +39,7 @@ import { useRouter } from "vue-router";
 import AssetStatus from "@/components/AssetStatus.vue";
 import { state } from "@/store";
 import { withoutPostfix } from "@/lib/typeHelpers/stringFunctions/prefixPostfix";
-import Footer from "@/components/app/Footer.vue";
+import Footer from "../digiq_t/components/Footer.vue";
 
 export default {
   name: "App",

@@ -11,23 +11,17 @@
 </template>
 
 <script>
-import Header from "../../eqrc/components/Header.vue";
+import Header from "../../digiq_t/components/Header.vue";
 import { state } from "@/store";
 import { computed } from "vue";
 import LSection from "@/components/layout/LSection.vue";
-import CardsNews from "../../eqrc/components/News/CardsNews";
-import SectionImageAndText from "@/components/SectionImageAndText.vue";
-import ThePrinciples from "../../eqrc/components/ThePrinciples.vue";
-import HowDoesItWork from "../../eqrc/components/HowDoesItWork.vue";
+import CardsNews from "../../digiq_t/components/News/CardsNews";
 export default {
   name: "LandingView",
   components: {
-    HowDoesItWork,
-    ThePrinciples,
     Header,
     LSection,
     CardsNews,
-    SectionImageAndText,
   },
   setup() {
     const clientId = computed(() => state.clientId);
