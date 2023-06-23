@@ -2,14 +2,6 @@
   <div class="lView min-h-screen">
     <LSection class="min-h-screen" :use-margin="false">
       <template #body>
-        <MenuBar
-          class="fixed w-full h-20 z-50"
-          :class="{
-            'bg-indigo-900': useColor,
-            'bg-[url(/newsHeader.png)] bg-no-repeat bg-cover bg-center h-32 aspect-square':
-              $route.name === 'news' || $route.path.startsWith('/news/'),
-          }"
-        ></MenuBar>
 
         <div class="lg:flex lg:items-center">
           <div class="min-h-screen w-full">

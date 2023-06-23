@@ -1,44 +1,41 @@
 <template>
   <div class="app flex flex-col min-h-screen">
-    <lView class="app relative text-slate-900">
-      <template #body>
-        <LModal
-            v-for="(actionError, index) in actionErrors"
-            :key="index"
-            class="fixed"
-            :clickable="false"
-            style="z-index: 4002; margin-top: 1rem"
-        >
-          <template #body>
-            <AssetStatus
-                :contextName="actionError.name"
-                :error="actionError"
-                @click="() => onAcknowledgeActionError(actionError)"
-            ></AssetStatus>
-          </template>
-        </LModal>
-        <div class="relative w-full flex flex-col items-stretch">
-          <div class="h-full mt-32">
-            <Digiq_tLandingView></Digiq_tLandingView>
-          </div>
+    <div class="app relative text-slate-900">
+      <LModal
+          v-for="(actionError, index) in actionErrors"
+          :key="index"
+          class="fixed"
+          :clickable="false"
+          style="z-index: 4002; margin-top: 1rem"
+      >
+        <template #body>
+          <AssetStatus
+              :contextName="actionError.name"
+              :error="actionError"
+              @click="() => onAcknowledgeActionError(actionError)"
+          ></AssetStatus>
+        </template>
+      </LModal>
+      <div class="relative w-full flex flex-col items-stretch">
+        <div class="h-full mt-32">
+          <Digiq_tLandingView></Digiq_tLandingView>
         </div>
-      </template>
-    </lView>
+      </div>
+    </div>
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import LView from "@/components/layout/LView";
-import { computed, shallowRef } from "vue";
-import { useQueryParam } from "@/composables/useQueryParam";
+import {computed, shallowRef} from "vue";
+import {useQueryParam} from "@/composables/useQueryParam";
 import LModal from "@/components/layout/LModal";
-import { _PUT_STATUS, LIST_ASSETS, RESUME_SESSION } from "@/store/operations";
-import { useStore } from "vuex";
-import { useRouter } from "vue-router";
+import {_PUT_STATUS, LIST_ASSETS, RESUME_SESSION} from "@/store/operations";
+import {useStore} from "vuex";
+import {useRouter} from "vue-router";
 import AssetStatus from "@/components/AssetStatus.vue";
-import { state } from "@/store";
-import { withoutPostfix } from "@/lib/typeHelpers/stringFunctions/prefixPostfix";
+import {state} from "@/store";
+import {withoutPostfix} from "@/lib/typeHelpers/stringFunctions/prefixPostfix";
 import Footer from "../digiq_t/components/Footer.vue";
 import Digiq_tLandingView from "../digiq_t/digiq_tLandingView.vue";
 
@@ -48,14 +45,13 @@ export default {
     Digiq_tLandingView,
     AssetStatus,
     LModal,
-    LView,
     Footer,
   },
   setup() {
     const router = useRouter();
     const store = useStore();
     const modalComponentName = shallowRef("");
-    const { isWorkshopSession } = useQueryParam("isWorkshopSession", true);
+    const {isWorkshopSession} = useQueryParam("isWorkshopSession", true);
 
     const actionErrors = computed(() =>
         Object.entries(state.status)
@@ -73,19 +69,19 @@ export default {
       developAsset: "Create, Edit, Delete Asset",
       manageAsset: "Manage Asset",
     };
-    store.dispatch(LIST_ASSETS, { dataType: "Organisation" });
+    store.dispatch(LIST_ASSETS, {dataType: "Organisation"});
     store.commit(RESUME_SESSION);
 
     const onModalClose = () => {
-      router.push({ query: {} });
+      router.push({query: {}});
     };
     const onAcknowledgeActionError = (action) => {
-      const { actionName } = action;
+      const {actionName} = action;
       console.log(93, actionName);
       store.commit(_PUT_STATUS, {
         event: actionName,
         result: {
-          _status: { isError: false, body: null },
+          _status: {isError: false, body: null},
         },
       });
     };

@@ -24,8 +24,8 @@
 
 <script>
 import {computed} from "vue";
-import AlertError from '../AlertError'
-import IconSkullOutline from "../icons/Nuke";
+import AlertError from './AlertError'
+import IconSkullOutline from "./icons/Nuke";
 
 export default {
   name: "AssetStatus",
