@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Header from "../../digiq_t/components/Header.vue";
+import Header from "./components/Header.vue";
 import { state } from "@/store";
 import { computed } from "vue";
 import LSection from "@/components/layout/LSection.vue";
