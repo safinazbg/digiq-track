@@ -19,7 +19,7 @@
         </LModal>
         <div class="relative w-full flex flex-col items-stretch">
           <div class="h-full mt-32">
-            <Digiq_t-landing-view></Digiq_t-landing-view>
+            <Digiq_tLandingView></Digiq_tLandingView>
           </div>
         </div>
       </template>
