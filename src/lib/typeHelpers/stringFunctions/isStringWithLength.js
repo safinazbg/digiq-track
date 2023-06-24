@@ -1,4 +1,4 @@
-import { isString } from "@/lib/getVariableType";
+import { isString } from "../getVariableType";
 
 export const isStringWithLength = (v, trimmed) => {
   let pass = isString(v);

@@ -15,7 +15,6 @@
           flex flex-column items-center justify-center
           h-[30vh]
         "
-           :style="style"
       >
         <slot></slot>
       </div>

@@ -4,7 +4,7 @@ import Header from "./Header.vue";
 
 export default defineComponent({
   name: "ResourcesHeader",
-  components: {Header}
+  components: {Header},
 })
 </script>
 

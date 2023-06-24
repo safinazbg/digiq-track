@@ -25,28 +25,30 @@
     color: white;
     border-radius: .25rem;
     padding: .75rem;
-    background-color: rgba(50, 205, 50, 1);
+    background-color: rgb(86, 86, 86);
     transition: background-color;
     transition-duration: 200ms;
     cursor: pointer;
     border: none;
 }
 .button:hover{
-    background-color: rgba(50, 205, 50, 0.8);
+    background-color: rgb(101, 101, 101);
 }
-.buttonSecondary{
+.buttonSecondary,
+.button.secondary {
     width: 10rem;
-    color: rgba(50, 205, 50, 1);
+    color: white;
     border-radius: .25rem;
     padding: .75rem;
-    background-color: white;
-    border: 2px solid rgba(50, 205, 50, 1);
+    background-color: #6c5fa2;
+    border: 2px solid rgb(108, 95, 162);
     transition: background-color;
     transition-duration: 200ms;
     cursor: pointer;
 }
-.buttonSecondary:hover{
-    background-color: rgba(50, 205, 50, 0.8);
+.buttonSecondary:hover,
+.button.secondary:hover {
+    background-color: rgb(86, 70, 159);
     color:white;
 }
 

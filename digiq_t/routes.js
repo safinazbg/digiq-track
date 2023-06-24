@@ -26,6 +26,15 @@ export default [
         }
     },
     {
+        path: '/resources/:type',
+        name: 'courses',
+        props: true,
+        components: {
+            header: () => import('./components/headers/ResourcesHeader.vue'),
+            default: () => import('./components/Resources.vue')
+        }
+    },
+    {
         path: '/dashboard',
         name: 'dashboard',
         components: {
