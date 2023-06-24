@@ -1,13 +1,17 @@
 <script>
 import {defineComponent} from 'vue'
+import Header from "./Header.vue";
 
 export default defineComponent({
-  name: "ResourcesHeader"
+  name: "ResourcesHeader",
+  components: {Header}
 })
 </script>
 
 <template>
-<div class="resourcesHeader">ResourcesHeader</div>
+  <Header>
+      <div class="resourcesHeader">ResourcesHeader</div>
+  </Header>
 </template>
 
 <style scoped>

@@ -1,14 +1,19 @@
 <script>
 import {defineComponent} from 'vue'
-
+import Header from "./Header.vue";
 export default defineComponent({
-  name: "DashboardHeader"
+  name: "DashboardHeader",
+  components: {
+    Header
+  },
 })
 </script>
 
 <template>
 <div class="dashboardHeader">
-  DashboardHeader
+  <Header>
+      DashboardHeader
+  </Header>
 </div>
 </template>
 
