@@ -7,15 +7,15 @@ export default defineComponent({
 </script>
 
 <template>
-<div class="lResourceCards">
+<div class="lResourceCards bg-gray-200">
   <div class="flex flex-col h8:flex-row">
-    <div class="flex-1 md:flex-none">
-      <slot name="cards">
+    <div class="flex-none h8:flex-1">
+      <slot name="cards p-4 ">
         cards
       </slot>
     </div>
-    <div class="flex flex-shrink-0 w-96">
-      <slot name="details">
+    <div class="flex gap-4 flex-shrink-0 w-96">
+      <slot name="details p-4">
         details
       </slot>
     </div>

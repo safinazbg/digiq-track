@@ -39,7 +39,8 @@ export default defineComponent({
     return {
       tabLabels,
       selectedTab,
-      onSelect
+      onSelect,
+      
     }
   }
 })

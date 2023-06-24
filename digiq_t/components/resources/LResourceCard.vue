@@ -14,9 +14,9 @@ export default defineComponent({
 
 <template>
 <div
-    class="lResourceCard p-4 rounded"
+    class="lResourceCard p-4 rounded bg-white"
     :class="{
-      'border-blue-500': isSelected,
+      'border border-blue-500': isSelected,
     }"
 >
   <slot></slot>
