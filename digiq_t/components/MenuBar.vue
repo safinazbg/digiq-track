@@ -14,6 +14,7 @@
                   hidden k1:visible
                   absolute left-1/2 -translate-x-1/2
                   k1:flex k1:gap-4
+                  font-bold
           ">
             <router-link to="/">Home</router-link>
             <router-link to="/info">Info</router-link>
