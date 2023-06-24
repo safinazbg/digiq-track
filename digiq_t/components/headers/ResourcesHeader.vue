@@ -3,7 +3,7 @@ import {defineComponent} from 'vue'
 import Header from "./Header.vue";
 import TextInput from "@/components/forms/TextInput.vue";
 import Button from "@/components/forms/Button.vue";
-
+import Magnify
 export default defineComponent({
   name: "ResourcesHeader",
   components: {
