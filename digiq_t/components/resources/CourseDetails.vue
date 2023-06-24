@@ -14,6 +14,9 @@ export default defineComponent({
 
 <template>
 <div class="courseDetails p-4 bg-white">
+  <div class="my-4 text-right text-digiPurple underline">
+    <router-link :to="{name: 'course', params: {id: course.id}}">Go to Course</router-link>
+  </div>
 
   <div class="text-xl font-bold">
     {{ course.title }}

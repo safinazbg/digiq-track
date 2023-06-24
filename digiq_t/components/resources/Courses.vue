@@ -13,6 +13,7 @@ export default defineComponent({
 
     const items = [
       {
+        id: 1,
         title: "Semiconductor Physics, Transport, and Spintronics",
         area: "Spain",
         organisation: "Universitat Autònoma de Barcelona",
@@ -23,6 +24,7 @@ export default defineComponent({
         examType: "Written take-home exam",
       },
       {
+        id: 2,
         title: "Quantum Programming",
         area: "Praque",
         organisation: "Czech Republic Technical University",
@@ -33,6 +35,7 @@ export default defineComponent({
         examType: "Written take-home exam",
       },
       {
+        id: 3,
         title: "Quantum Liquids",
         area: "Pisa",
         organisation: "University of Pisa",

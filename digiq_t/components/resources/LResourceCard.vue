@@ -14,9 +14,10 @@ export default defineComponent({
 
 <template>
   <div
-      class="lResourceCard p-4 bg-white"
+      class="lResourceCard p-4 bg-white border"
       :class="{
-      'border border-digiPurple': isSelected,
+      'border-digiPurple': isSelected,
+      'border-white': !isSelected
     }"
   >
     <slot></slot>

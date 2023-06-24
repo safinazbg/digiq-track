@@ -18,19 +18,20 @@ export default defineComponent({
 
 <template>
   <Header
+      class="resourcesHeader"
       src="url(@public/quantum.jpg)"
   >
     <div class="
       landingHeader
       relative
       w-full h-full
+      text-center text-white
+      flex flex-col justify-center items-center
     ">
-      <div class="tint-overlay"></div>
-      <div class="resourcesHeader text-center ">
         <div class="text-3xl font-bold mb-2">
           Join the DigiQ education track
         </div>
-        <p class="text-lg text-gray-500">
+        <p class="text-lg text-gray-200">
           Discover courses, internships, and network opportunities to get <br>
           the most out of your degree!
         </p>
@@ -54,7 +55,6 @@ export default defineComponent({
               Search
             </template>
           </Button>
-        </div>
       </div>
     </div>
   </Header>

@@ -35,6 +35,12 @@ export default [
         }
     },
     {
+        path: '/course/:id',
+        name: 'course',
+        props: true,
+        component: () => import('./components/CoursePage.vue')
+    },
+    {
         path: '/dashboard',
         name: 'dashboard',
         components: {
