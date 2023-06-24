@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "NukeIcon",
+  name: "MagnifyIcon",
   props: {
     title: {
       type: String,
