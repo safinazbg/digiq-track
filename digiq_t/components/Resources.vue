@@ -40,7 +40,6 @@ export default defineComponent({
       tabLabels,
       selectedTab,
       onSelect,
-      
     }
   }
 })
