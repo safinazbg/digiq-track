@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import Header from "./components/headers/Header.vue";
 import MenuBar from "./components/MenuBar.vue";
 import Footer from "./components/Footer.vue";
 import { state } from "@/store";
@@ -22,7 +21,6 @@ export default {
   name: "digiq_tLandingView",
   components: {
     Footer,
-    Header,
     LSection,
     MenuBar,
   },
