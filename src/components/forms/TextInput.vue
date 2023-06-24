@@ -4,7 +4,9 @@
             <label v-if="label" class="mb-2 block text-xs text-gray-500">{{
                 label
                 }}</label>
-            <div class="flex flex-wrap">
+            <div
+                class="flex flex-wrap"
+            >
       <span
               v-if="iconName"
               class="inline-flex items-center px-1 text-sm border border-gray-200 bg-gray-400 dark:bg-gray-600 dark:border-gray-600"
