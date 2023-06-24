@@ -1,9 +1,9 @@
 <template>
   <div class="landing -mt-32">
-    <Header></Header>
     <LSection class="sectionMarginY !mb-48">
       <template #body>
         <MenuBar class="fixed w-full h-20 z-50"></MenuBar>
+        <Header></Header>
         <router-view></router-view>
         <Footer></Footer>
       </template>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue";
+import Header from "./components/headers/Header.vue";
 import MenuBar from "./components/MenuBar.vue";
 import Footer from "./components/Footer.vue";
 import { state } from "@/store";

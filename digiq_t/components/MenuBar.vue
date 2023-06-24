@@ -1,21 +1,27 @@
 <template>
   <LSection>
-    <template #body
-    >
+    <template #body>
       <nav
           :key="showMenu"
-          class="menuBar pt-2 h-20 text-gray-100 font-light text-sm dark:bg-gray-900"
+          class="menuBar pt-2 h-20 font-light text-sm dark:bg-gray-900"
       >
         <div class="flex flex-wrap justify-between mt-3 h6:mt-0 items-center z-10">
           <a href="/" class="flex">
             <img src="../public/logo.png" class="h-10 h6:mt-0 h6:h-16"/>
           </a>
           <div
-              class="hidden k1:visible k1:flex k1:gap-4 absolute left-1/2 -translate-x-1/2"
-          >
+              class="
+                  hidden k1:visible
+                  absolute left-1/2 -translate-x-1/2
+                  k1:flex k1:gap-4
+          ">
             <router-link to="/">Home</router-link>
             <router-link to="/info">Info</router-link>
             <router-link to="/resources">Resources</router-link>
+            <router-link
+                v-if="isLoggedIn"
+                to="/dashboard"
+            >My Dashboard</router-link>
           </div>
           <div class="k1:ml-8 gap-2 items-center flex k1:gap-4">
             <!-- <button
@@ -56,7 +62,19 @@
             </div>
             <button
                 type="button"
-                class="bg-transparent inline-flex items-center p-2 ml-0 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 k1:hidden"
+                class="
+                    inline-flex items-center
+                    p-2 ml-0
+                    rounded-lg
+                    k1:hidden
+                    text-sm text-gray-500
+                    bg-transparent
+                    hover:bg-gray-100
+                    focus:outline-none focus:ring-2 focus:ring-gray-200
+                    dark:text-gray-400
+                    dark:hover:bg-gray-700
+                    dark:focus:ring-gray-600
+                "
                 @click="showMenu = !showMenu"
             >
               <span class="sr-only">Open main menu</span>
@@ -82,10 +100,10 @@
               :class="{ hidden: !showMenu }"
               @click="() => showMenu = false"
           >
-            <div class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-200 md:flex-row k1:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <div class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-200 k1:flex-row k1:space-x-8 k1:mt-0 k1:text-sm k1:font-medium k1:border-0 k1:bg-white dark:bg-gray-800 k1:dark:bg-gray-900 dark:border-gray-700">
               <router-link
                   to="/"
-                  class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 k1:hover:bg-transparent k1:border-0 k1:hover:text-blue-700 k1:p-0 dark:text-gray-400 k1:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white k1:dark:hover:bg-transparent"
                   :class="{
                     'text-white bg-blue-700 hover:bg-gray-600': $route.name === 'home',
                     'hover:bg-gray-200 hover:text-gray-700': $route.name !== 'home',
@@ -104,12 +122,12 @@
                       dark:text-gray-400
                       dark:hover:bg-gray-700
                       dark:hover:text-white
-                      md:dark:hover:text-white
-                      md:dark:hover:bg-transparent
-                      md:p-0
-                      md:hover:bg-transparent
-                      md:hover:text-blue-700
-                      md:border-0
+                      k1:dark:hover:text-white
+                      k1:dark:hover:bg-transparent
+                      k1:p-0
+                      k1:hover:bg-transparent
+                      k1:hover:text-blue-700
+                      k1:border-0
                   "
                   :class="{
                     'text-white bg-blue-700 hover:bg-gray-600': $route.name === 'info',
@@ -121,7 +139,7 @@
 
               <router-link
                   to="/resources"
-                  class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 k1:hover:bg-transparent k1:border-0 k1:hover:text-blue-700 k1:p-0 dark:text-gray-400 k1:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white k1:dark:hover:bg-transparent"
                   :class="{
                     'text-white bg-blue-700 hover:bg-gray-600': $route.name === 'resources',
                     'hover:bg-gray-200 hover:text-gray-700': $route.name !== 'resources',
@@ -132,7 +150,7 @@
 
               <div
                   v-if="account && checkScreenWidth"
-                  class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 k1:hover:bg-transparent k1:border-0 k1:hover:text-blue-700 k1:p-0 dark:text-gray-400 k1:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white k1:dark:hover:bg-transparent"
               >
                 Logout
               </div>

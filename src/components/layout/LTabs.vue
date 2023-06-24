@@ -69,7 +69,7 @@ export default {
       default: 0
     }
   },
-  setup(props) {
+  setup(props, {emit}) {
     const slotLabels = computed(() => {
       const set = new Set(props.labels)
       return [...set]
@@ -83,7 +83,7 @@ export default {
     const onSelect = index => {
       if (selectedTab.value !== index) {
         selectedTab.value = index
-        // emit('select', {index, label: slotLabels.value[index]})
+        emit('select', {index, label: slotLabels.value[index]})
       }
     }
 
