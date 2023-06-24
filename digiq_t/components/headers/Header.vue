@@ -1,26 +1,35 @@
 <template>
   <div
-      class="
-        header
-        bg-cover
-        flex flex-column items-center justify-center
-        h-[30vh]
-    "
-      :style="{
+      class="header relative"
+  >
+    <div
+        class="bg-cover"
+        :style="{
         backgroundImage: src,
-        backgroundPosition: 'center center'
+        backgroundPosition: 'center center',
       }
     "
-  >
-    <slot></slot>
+    >
+      <div class="
+          tint-overlay
+          flex flex-column items-center justify-center
+          h-[30vh]
+        "
+           :style="style"
+      >
+        <slot></slot>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import {useUserPermissions} from "@/composables/useUserPermissions";
+import {withPostfix, withPrefix} from "@/lib/typeHelpers/stringFunctions/prefixPostfix";
 
 export default {
   name: "cHeader",
+  methods: {withPostfix, withPrefix},
   components: {},
   props: {
     src: {
@@ -30,6 +39,7 @@ export default {
   },
   setup() {
     const {isLoggedIn, user} = useUserPermissions();
+
     return {
       isLoggedIn,
       user,
@@ -38,4 +48,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
