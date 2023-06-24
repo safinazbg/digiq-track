@@ -102,8 +102,8 @@ button.main,
 button.primary {
   background-image: linear-gradient(
       to bottom right,
-      #db2777,
-      #f97316
+      #c793fc,
+      #9973e3
   ) !important;
 }
 
@@ -111,14 +111,14 @@ button.primary {
 .button.primary:hover,
 button.main:hover,
 button.primary:hover {
-  background-image: linear-gradient(to top left, #db2777, #f97316) !important;
+  background-image: linear-gradient(to top left, #9973e3, #c793fc) !important;
 }
 
 .gradientLine {
-  background-image: linear-gradient(to bottom right, #db2777, #f97316);
+  background-image: linear-gradient(to bottom right, #c793fc, #f97316);
 }
 
 .gradientLine:hover {
-  background-image: linear-gradient(to bottom left, #db2777, #f97316);
+  background-image: linear-gradient(to bottom left, #c793fc, #9973e3);
 }
 </style>
