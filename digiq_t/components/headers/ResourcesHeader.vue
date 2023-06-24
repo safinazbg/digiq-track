@@ -3,12 +3,13 @@ import {defineComponent} from 'vue'
 import Header from "./Header.vue";
 import TextInput from "@/components/forms/TextInput.vue";
 import Button from "@/components/forms/Button.vue";
-
+import Magnify from "@/components/icons/Magnify.vue";
 export default defineComponent({
   name: "ResourcesHeader",
   components: {
     Button,
     Header,
+    Magnify,
     TextInput
   },
 })
@@ -26,16 +27,18 @@ export default defineComponent({
       </p>
       <div class="flex flex-row mt-6">
         <TextInput
-            class="rounded-none"
+            class="rounded-none h-12"
             placeholder="What Subject?"
         ></TextInput>
         <TextInput
-            class="rounded-none"
+            class="rounded-none h-12"
             placeholder="Where?"
         ></TextInput>
-        <Button>
+        <Button
+            :isPrimary="true"
+        >
           <template #left>
-
+            <Magnify class="pr-2"></Magnify>
           </template>
 
           <template #center>

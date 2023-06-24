@@ -12,7 +12,7 @@
           <div
               class="
                   hidden k1:visible
-                  absolute left-1/2 -translate-x-1/2
+                  absolute left-1/2
                   k1:flex k1:gap-4
                   font-bold
           ">
@@ -41,8 +41,6 @@
             </button>
             <div v-else-if="account">
               <div class="flex text-xs gap-2 items-center">
-                <div>Welcome {{ splitName }}</div>
-
                 <button
                     class="hidden h6:block button main"
                     style="background-image: linear-gradient(to right, #db2777, #f97316); "
