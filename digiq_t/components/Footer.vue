@@ -70,13 +70,6 @@
         </div>
       </template>
     </LSection>
-    <div class="bg-gray-800 py-4">
-      <div class="container mx-auto text-center text-sm">
-        <p>
-          &copy; European Quantum Readiness Center 2023. All rights reserved.
-        </p>
-      </div>
-    </div>
   </footer>
 </template>
 
