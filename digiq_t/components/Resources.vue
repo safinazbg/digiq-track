@@ -39,7 +39,23 @@ export default defineComponent({
     return {
       tabLabels,
       selectedTab,
-      onSelect
+      onSelect,
+      resources: {
+        courses: [
+          {
+            title:"Semiconductor Physics, Transport, and Spintronics",
+            area:"Spain",
+            institution:"Universitat Autònoma de Barcelona",
+            ECTS: 2,
+            inPerson: true,
+            schedule:"3 lectures per week",
+            homework: "4 hours of homework",
+            exam: "Written take-home exam",
+
+          }
+        ],
+        internships: [],
+        networks: []}
     }
   }
 })
