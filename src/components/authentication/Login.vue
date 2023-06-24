@@ -3,7 +3,6 @@
     <form @submit.prevent="onSubmit" ref="form" class="form">
       <h1 class="heading1">
         Login
-        <hr class="gradientLine" />
       </h1>
       <StatusMessage operation="LOGIN"></StatusMessage>
       <div class="flex flex-wrap">
@@ -42,19 +41,18 @@
           <!--          </div>-->
         </div>
       </div>
-      <div class="flex flex-row gap-4 justify-end">
-        <Button
-          class="button secondary"
-          :tabindex="3"
-          type="submit"
-          @click="$router.go(-1)"
-        >
-          <template #right>Back</template>
-        </Button>
+      <div class="flex flex-row gap-4 justify-center">
+<!--        <Button-->
+<!--          class="button secondary"-->
+<!--          :tabindex="3"-->
+<!--          type="submit"-->
+<!--          @click="$router.go(-1)"-->
+<!--        >-->
+<!--          <template #right>Back</template>-->
+<!--        </Button>-->
         <Button
           :is-disabled="!isValid"
           :is-primary="isValid"
-          style="background-image: linear-gradient(to right, #db2777, #f97316)"
           @click="onSubmit"
         >
           <template #center>Login</template>
