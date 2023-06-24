@@ -8,15 +8,14 @@
         k1:p-12 k1:pb-96
     "
       :style="{
-        backgroundImage: 'url(@public/landing.jpg)',
+        backgroundImage: src,
         backgroundPosition: 'center top'
       }
     "
   >
-    <!--    <LParticles class="pointer-events-none"></LParticles>-->
     <section class="">
       <div class="pt-4 pb-12 k1:pt-36 k1:pb-20">
-        <router-view name="header"></router-view>
+        <slot></slot>
       </div>
     </section>
   </div>
@@ -28,6 +27,12 @@ import {useUserPermissions} from "@/composables/useUserPermissions";
 export default {
   name: "cHeader",
   components: {},
+  props: {
+    src: {
+      type: String,
+      default: "url(@public/landing.jpg)",
+    },
+  },
   setup() {
     const {isLoggedIn, user} = useUserPermissions();
     return {

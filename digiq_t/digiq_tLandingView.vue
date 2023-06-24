@@ -3,7 +3,7 @@
     <LSection class="sectionMarginY !mb-48">
       <template #body>
         <MenuBar class="fixed w-full h-20 z-50"></MenuBar>
-        <Header></Header>
+        <router-view name="header"></router-view>
         <router-view></router-view>
         <Footer></Footer>
       </template>

@@ -1,13 +1,17 @@
 <script>
 import {defineComponent} from 'vue'
+import Header from "./Header.vue";
 
 export default defineComponent({
-  name: "InfoHeader"
+  name: "InfoHeader",
+  components: {Header}
 })
 </script>
 
 <template>
-<div class="infoHeader">InfoHeader</div>
+  <Header>
+    <div class="infoHeader">InfoHeader</div>
+  </Header>
 </template>
 
 <style scoped>
