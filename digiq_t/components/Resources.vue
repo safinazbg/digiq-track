@@ -56,7 +56,7 @@ export default defineComponent({
         ],
         internships: [],
         networks: []}
-    }
+}
   }
 })
 </script>
