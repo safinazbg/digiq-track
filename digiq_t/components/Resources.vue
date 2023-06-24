@@ -2,12 +2,14 @@
 import {defineComponent, ref, watch} from 'vue'
 import LTabs from '@/components/layout/LTabs.vue'
 import LResourceCards from "./resources/LResourceCards.vue";
-import LResourceCard from "./resources/LResourceCard.vue";
+import CourseDetails from "./resources/CourseDetails.vue";
+import Courses from "./resources/Courses.vue";
 
 export default defineComponent({
   name: "cResources",
   components: {
-    LResourceCard,
+    CourseDetails,
+    Courses,
     LResourceCards,
     LTabs
   },
@@ -32,31 +34,24 @@ export default defineComponent({
     }, {
       immediate: true
     })
-    const onSelect = (index) => {
+    const selectedItem = ref(null)
+    const onSelectTab = (index) => {
       selectedTab.value = index
+    }
+    const onSelectItem = (item) => {
+      selectedItem.value = item
     }
 
     return {
       tabLabels,
       selectedTab,
-      onSelect,
+      onSelectItem,
+      onSelectTab,
       resources: {
-        courses: [
-          {
-            title: "Semiconductor Physics, Transport, and Spintronics",
-            area: "Spain",
-            institution: "Universitat Autònoma de Barcelona",
-            ECTS: 2,
-            inPerson: true,
-            schedule: "3 lectures per week",
-            homework: "4 hours of homework",
-            exam: "Written take-home exam",
-
-          }
-        ],
         internships: [],
         networks: []
-      }
+      },
+      selectedItem,
     }
   }
 })
@@ -67,21 +62,20 @@ export default defineComponent({
     <LTabs
         :labels="tabLabels"
         :selected="selectedTab"
-        :update="onSelect"
+        :update="onSelectTab"
     >
       <template #one>
-        <LResourceCards>
+        <LResourceCards class="mt-16">
           <template #cards>
-            <LResourceCard
-                v-for="(res, index) in cards"
-                :key="index"
-            >
-              <template></template>
-            </LResourceCard>
-
+            <Courses
+                @select="onSelectItem"
+            ></Courses>
           </template>
           <template #details>
-
+            <CourseDetails
+                v-if="selectedItem"
+                :course="selectedItem"
+            ></CourseDetails>
           </template>
         </LResourceCards>
       </template>
