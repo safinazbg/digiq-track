@@ -1,15 +1,20 @@
 <script>
 import {defineComponent} from 'vue'
 import Header from "./Header.vue";
+import {useUserPermissions} from "@/composables/useUserPermissions";
 
 export default defineComponent({
   name: "LandingHeader",
-  components: {Header}
+  components: {Header},
+  setup() {
+    const {isLoggedIn} = useUserPermissions()
+    return {isLoggedIn}
+  }
 })
 </script>
 
 <template>
-  <Header>
+  <Header src="url(@public/landing.jpg)">
 
     <div class="landingHeader">
       <div

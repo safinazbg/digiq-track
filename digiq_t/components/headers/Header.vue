@@ -3,21 +3,16 @@
       class="
         header
         bg-cover
-        h-[60vh]
-        pt-24
-        k1:p-12 k1:pb-96
+        flex flex-column items-center justify-center
+        h-[30vh]
     "
       :style="{
         backgroundImage: src,
-        backgroundPosition: 'center top'
+        backgroundPosition: 'center center'
       }
     "
   >
-    <section class="">
-      <div class="pt-4 pb-12 k1:pt-36 k1:pb-20">
-        <slot></slot>
-      </div>
-    </section>
+    <slot></slot>
   </div>
 </template>
 
@@ -30,7 +25,7 @@ export default {
   props: {
     src: {
       type: String,
-      default: "url(@public/landing.jpg)",
+      default: "",
     },
   },
   setup() {
