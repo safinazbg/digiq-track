@@ -1,6 +1,6 @@
 const appId = 'digiq_t'
 module.exports = {
-    purge: [
+    content: [
         './public/index.html',
         './src/**/*.{vue,js,ts,jsx,tsx}',
         `./${appId}/**/*.{vue,js,ts,jsx,tsx}`,
