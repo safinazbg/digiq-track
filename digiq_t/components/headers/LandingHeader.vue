@@ -19,7 +19,7 @@ export default defineComponent({
 <template>
   <Header
       class="resourcesHeader"
-      src="url(/public/quantum.jpg)"
+      src="url(/digiq-track/quantum.jpg)"
   >
     <div class="
       landingHeader
