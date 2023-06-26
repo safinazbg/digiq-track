@@ -8,7 +8,7 @@ const appId = 'digiq_t'
 
 module.exports = defineConfig({
     transpileDependencies: true,
-    outputDir: path.resolve(__dirname, './docs'),
+    outputDir: 'docs',
     publicPath: '/',
     configureWebpack: {
         plugins: [
