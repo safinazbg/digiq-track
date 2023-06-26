@@ -19,7 +19,7 @@ export default defineComponent({
 <template>
   <Header
       class="resourcesHeader"
-      src="url(@public/quantum.jpg)"
+      src="url(/public/quantum.jpg)"
   >
     <div class="
       landingHeader
