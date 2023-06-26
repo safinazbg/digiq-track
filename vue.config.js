@@ -16,14 +16,14 @@ module.exports = defineConfig({
                 patterns: [
                     {
                         from: path.resolve(process.cwd(), 'public'),
-                        to: 'docs',
+                        to: path.resolve(process.cwd(), 'docs'),
                         globOptions: {
                             ignore: ['**/index.html'],
                         },
                     },
                     {
                         from: path.resolve(process.cwd(), appId, 'public'),
-                        to: 'docs',
+                        to: path.resolve(process.cwd(), 'docs'),
                         globOptions: {
                             ignore: ['**/index.html'],
                         },
