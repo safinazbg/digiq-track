@@ -1,11 +1,19 @@
 <script>
 import {defineComponent} from 'vue'
-import Check from "@/components/icons/Check.vue";
+import CertificateOutline from '@/components/icons/CertificateOutline.vue'
+import CastEducation from "@/components/icons/CastEducation.vue";
+import Domain from "@/components/icons/Domain.vue";
+import FileClockOutline from "@/components/icons/FileClockOutline.vue";
+import TextBoxOutline from "@/components/icons/TextBoxOutline.vue";
 
 export default defineComponent({
   name: "cCourse",
   components: {
-    Check
+    CastEducation,
+    CertificateOutline,
+    Domain,
+    FileClockOutline,
+    TextBoxOutline,
   },
   props: {
     course: {
@@ -35,13 +43,13 @@ export default defineComponent({
 
       <div class="w-full flex mb-2">
         <div class=" w-1/2 flex gap-4 items-center">
-          <Check/>
+          <CertificateOutline/>
           <div class="text-sm ">
             {{ course.ECTS }} ECTS
           </div>
         </div>
         <div class=" w-1/2 flex gap-4 items-center">
-          <Check/>
+          <FileClockOutline/>
           <div class="text-sm ">
             {{ course.homework }}
           </div>
@@ -50,20 +58,20 @@ export default defineComponent({
 
       <div class="w-full flex mb-2">
         <div class="w-1/2 flex gap-4 items-center">
-          <Check/>
+          <Domain/>
           <div class="text-sm ">
             {{ course.inPerson ? "In person" : "Online" }}
           </div>
         </div>
         <div class="w-1/2 flex gap-4 items-center">
-          <Check/>
+          <TextBoxOutline/>
           <div class="text-sm ">
             {{ course.examType }}
           </div>
         </div>
       </div>
         <div class="flex gap-4 items-center">
-          <Check/>
+          <CastEducation/>
 
           <div class="text-sm">
             {{ course.schedule }}
