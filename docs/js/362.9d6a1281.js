@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkdigiq_track"]=self["webpackChunkdigiq_track"]||[]).push([[362],{9362:function(a,r,n){n.r(r),n.d(r,{default:function(){return u}});var c=n(3396);const s={class:"dashboard"};function t(a,r,n,t,e,d){return(0,c.wg)(),(0,c.iD)("div",s," Dashboard ")}var e=(0,c.aZ)({name:"cDashboard"}),d=n(89);const i=(0,d.Z)(e,[["render",t]]);var u=i}}]);
+//# sourceMappingURL=362.9d6a1281.js.map
