@@ -1,7 +1,8 @@
 <script>
-import {defineComponent, ref} from 'vue'
+import {computed, defineComponent, ref} from 'vue'
 import LResourceCard from "./LResourceCard.vue";
 import Course from "./Course.vue";
+import {state} from "@/store";
 export default defineComponent({
   emits: ['select'],
   name: "cCourses",
@@ -10,49 +11,17 @@ export default defineComponent({
     LResourceCard
   },
   setup(props, {emit}) {
-
-    const items = [
-      {
-        id: 1,
-        title: "Semiconductor Physics, Transport, and Spintronics",
-        area: "Spain",
-        organisation: "Universitat Autònoma de Barcelona",
-        ECTS: 2,
-        inPerson: true,
-        schedule: "3 lectures per week",
-        homework: "4 hours of homework",
-        examType: "Written take-home exam",
-      },
-      {
-        id: 2,
-        title: "Quantum Programming",
-        area: "Praque",
-        organisation: "Czech Republic Technical University",
-        ECTS: 2,
-        inPerson: true,
-        schedule: "3 lectures per week",
-        homework: "4 hours of homework",
-        examType: "Written take-home exam",
-      },
-      {
-        id: 3,
-        title: "Quantum Liquids",
-        area: "Pisa",
-        organisation: "University of Pisa",
-        ECTS: 2,
-        inPerson: true,
-        schedule: "3 lectures per week",
-        homework: "4 hours of homework",
-        examType: "Written take-home exam",
-      }
-    ]
+    const courses = computed(() =>
+        Object.values(state.assets)
+            .filter(item => item.dataType === 'Course')
+    )
     const selectedItem = ref(null)
     const onSelect = (selected) => {
-      selectedItem.value = items.find(item => item.title === selected.title)
+      selectedItem.value = courses.value.find(item => item.title === selected.title)
       emit('select', selected)
     }
     return {
-      items,
+      courses,
       onSelect,
       selectedItem,
     }
@@ -63,7 +32,7 @@ export default defineComponent({
 <template>
   <div class="courses flex flex-col gap-4 p-4">
     <LResourceCard
-        v-for="(item, index) in items"
+        v-for="(item, index) in courses"
         :key="index"
         :is-selected="item.title === selectedItem?.title"
         @click.stop="() => onSelect(item)"

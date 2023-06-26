@@ -133,7 +133,7 @@
                     'hover:bg-gray-200 hover:text-gray-700': $route.name !== 'info',
                   }"
               >
-                Organisations
+                Info
               </router-link>
 
               <router-link
@@ -144,7 +144,7 @@
                     'hover:bg-gray-200 hover:text-gray-700': $route.name !== 'resources',
                   }"
               >
-                Accords
+                Resources
               </router-link>
 
               <div
